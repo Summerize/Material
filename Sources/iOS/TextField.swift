@@ -509,10 +509,7 @@ extension TextField {
     /// Layout the detailLabel.
     fileprivate func layoutDetailLabel() {
         let c = dividerContentEdgeInsets
-        detailLabel.height = detailLabel.sizeThatFits(CGSize(width: width, height: .greatestFiniteMagnitude)).height
-        detailLabel.x = c.left
-        detailLabel.y = height + detailVerticalOffset
-        detailLabel.width = width - c.left - c.right
+        detailLabel.frame = CGRect(x:c.left, y:height + detailVerticalOffset, width:width - c.left - c.right, height:detailLabel.sizeThatFits(CGSize(width: width, height: .greatestFiniteMagnitude)).height)
     }
     
     /// Layout the a button.
