@@ -30,7 +30,7 @@
 
 import UIKit
 
-open class PresenterCard: Card {
+open class PresenterCard: CardPulseView {
     /// A preset wrapper around presenterViewEdgeInsets.
     open var presenterViewEdgeInsetsPreset = EdgeInsetsPreset.none {
         didSet {

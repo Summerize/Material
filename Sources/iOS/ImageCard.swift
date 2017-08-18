@@ -36,7 +36,7 @@ public enum ToolbarAlignment: Int {
     case bottom
 }
 
-open class ImageCard: Card {
+open class ImageCard: CardPulseView {
     /**
      A Display value to indicate whether or not to
      display the imageView to the full view

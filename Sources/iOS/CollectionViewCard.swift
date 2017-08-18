@@ -31,7 +31,7 @@
 import UIKit
 
 class CardCollectionViewCell: CollectionViewCell {
-    open var card: Card? {
+    open var card: CardPulseView? {
         didSet {
             oldValue?.removeFromSuperview()
             if let v = card {
@@ -42,7 +42,7 @@ class CardCollectionViewCell: CollectionViewCell {
 }
 
 @objc(CollectionViewCard)
-open class CollectionViewCard: Card {
+open class CollectionViewCard: CardPulseView {
     /// A reference to the dataSourceItems.
     open var dataSourceItems = [DataSourceItem]()
     
@@ -71,7 +71,7 @@ open class CollectionViewCard: Card {
             var h: CGFloat = 0
             var i: Int = 0
             for dataSourceItem in dataSourceItems {
-                h += dataSourceItem.height ?? (dataSourceItems[i].data as? Card)?.height ?? 0
+                h += dataSourceItem.height ?? (dataSourceItems[i].data as? CardPulseView)?.height ?? 0
                 i += 1
             }
             collectionView.height = h
@@ -116,7 +116,7 @@ extension CollectionViewCard: CollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCollectionViewCell", for: indexPath) as! CardCollectionViewCell
         cell.pulseAnimation = .none
         
-        guard let card = dataSourceItems[indexPath.item].data as? Card else {
+        guard let card = dataSourceItems[indexPath.item].data as? CardPulseView else {
             return cell
         }
         

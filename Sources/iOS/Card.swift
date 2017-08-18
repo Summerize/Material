@@ -30,7 +30,7 @@
 
 import UIKit
 
-open class Card: PulseView {
+open class CardPulseView: PulseView {
     /// A container view for subviews.
     open let container = UIView()
     
@@ -257,7 +257,7 @@ open class Card: PulseView {
     }
 }
 
-extension Card {
+extension CardPulseView {
     /// Prepares the container.
     fileprivate func prepareContainer() {
         container.clipsToBounds = true
